@@ -1,0 +1,147 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{H1}
+N.~Dalal, B.~Triggs, Histograms of oriented gradients for human detection, in:
+  2005 IEEE computer society conference on computer vision and pattern
+  recognition (CVPR'05), Vol.~1, Ieee, 2005, pp. 886--893.
+
+\bibitem{H2}
+W.~Xing, N.~Deng, B.~Xin, Y.~Liu, Y.~Chen, Z.~Zhang, Identification of
+  extremely similar animal fibers based on matched filter and hog-svm, IEEE
+  Access 7 (2019) 98603--98617.
+
+\bibitem{H3}
+Z.~Xiang, H.~Tan, W.~Ye, The excellent properties of a dense grid-based hog
+  feature on face recognition compared to gabor and lbp, IEEE Access 6 (2018)
+  29306--29319.
+
+\bibitem{H4}
+M.~Awais, M.~J. Iqbal, I.~Ahmad, M.~O. Alassafi, R.~Alghamdi, M.~Basheri,
+  M.~Waqas, Real-time surveillance through face recognition using hog and
+  feedforward neural networks, IEEE Access 7 (2019) 121236--121244.
+
+\bibitem{H6}
+M.~Ehatisham-Ul-Haq, A.~Javed, M.~A. Azam, H.~M. Malik, A.~Irtaza, I.~H. Lee,
+  M.~T. Mahmood, Robust human activity recognition using multimodal
+  feature-level fusion, IEEE Access 7 (2019) 60736--60751.
+
+\bibitem{H7}
+N.~Laopracha, K.~Sunat, S.~Chiewchanwattana, A novel feature selection in
+  vehicle detection through the selection of dominant patterns of histograms of
+  oriented gradients (dphog), IEEE Access 7 (2019) 20894--20919.
+
+\bibitem{H8}
+K.~Negi, K.~Dohi, Y.~Shibata, K.~Oguri, Deep pipelined one-chip fpga
+  implementation of a real-time image-based human detection algorithm, in: 2011
+  International Conference on Field-Programmable Technology, IEEE, 2011, pp.
+  1--8.
+
+\bibitem{H9}
+K.~Mizuno, Y.~Terachi, K.~Takagi, S.~Izumi, H.~Kawaguchi, M.~Yoshimoto,
+  Architectural study of hog feature extraction processor for real-time object
+  detection, in: 2012 IEEE Workshop on Signal Processing Systems, IEEE, 2012,
+  pp. 197--202.
+
+\bibitem{H10}
+M.~Komorkiewicz, M.~Kluczewski, M.~Gorgon, Floating point hog implementation
+  for real-time multiple object detection, in: 22nd International Conference on
+  Field Programmable Logic and Applications (FPL), IEEE, 2012, pp. 711--714.
+
+\bibitem{H11}
+S.~Advani, Y.~Tanabe, K.~Irick, J.~Sampson, V.~Narayanan, A scalable
+  architecture for multi-class visual object detection, in: 2015 25th
+  International Conference on Field Programmable Logic and Applications (FPL),
+  IEEE, 2015, pp. 1--8.
+
+\bibitem{H12}
+T.~Sledevi{\`e}, A.~Serackis, D.~Plonis, Fpga-based selected object tracking
+  using lbp, hog and motion detection, in: 2018 IEEE 6th Workshop on Advances
+  in Information, Electronic and Electrical Engineering (AIEEE), IEEE, 2018,
+  pp. 1--5.
+
+\bibitem{H13}
+Q.~J. Wang, R.~B. Zhang, Lpp-hog: A new local image descriptor for fast human
+  detection, in: 2008 IEEE International Symposium on Knowledge Acquisition and
+  Modeling Workshop, IEEE, 2008, pp. 640--643.
+
+\bibitem{H14}
+J.~Jiang, H.~Xiong, Fast pedestrian detection based on hog-pca and gentle
+  adaboost, in: 2012 International Conference on Computer Science and Service
+  System, IEEE, 2012, pp. 1819--1822.
+
+\bibitem{H15}
+Y.-p. Chen, S.-z. Li, X.-m. Lin, Fast hog feature computation based on cuda,
+  in: 2011 IEEE International Conference on Computer Science and Automation
+  Engineering, Vol.~4, IEEE, 2011, pp. 748--751.
+
+\bibitem{H23}
+C.~Wojek, B.~Schiele, A performance evaluation of single and multi-feature
+  people detection, in: Joint Pattern Recognition Symposium, Springer, 2008,
+  pp. 82--91.
+
+\bibitem{H24}
+S.~Walk, N.~Majer, K.~Schindler, B.~Schiele, New features and insights for
+  pedestrian detection, in: 2010 IEEE Computer society conference on computer
+  vision and pattern recognition, IEEE, 2010, pp. 1030--1037.
+
+\bibitem{H25}
+T.~Watanabe, S.~Ito, K.~Yokoi, Co-occurrence histograms of oriented gradients
+  for pedestrian detection, in: Pacific-Rim Symposium on Image and Video
+  Technology, Springer, 2009, pp. 37--47.
+
+\bibitem{H26}
+P.~Doll{\'a}r, Z.~Tu, P.~Perona, S.~Belongie, Integral channel features (2009).
+
+\bibitem{H27}
+R.~M. Anwer, D.~V{\'a}zquez, A.~M. L{\'o}pez, Opponent colors for human
+  detection, in: Iberian Conference on Pattern Recognition and Image Analysis,
+  Springer, 2011, pp. 363--370.
+
+\bibitem{H16}
+N.~He, J.~Cao, L.~Song, Scale space histogram of oriented gradients for human
+  detection, in: 2008 International Symposium on Information Science and
+  Engineering, Vol.~2, IEEE, 2008, pp. 167--170.
+
+\bibitem{H17}
+A.~J. Newell, L.~D. Griffin, Multiscale histogram of oriented gradient
+  descriptors for robust character recognition, in: 2011 International
+  conference on document analysis and recognition, IEEE, 2011, pp. 1085--1089.
+
+\bibitem{H18}
+T.~Kobayashi, A.~Hidaka, T.~Kurita, Selection of histograms of oriented
+  gradients features for pedestrian detection, in: International conference on
+  neural information processing, Springer, 2007, pp. 598--607.
+
+\bibitem{H19}
+C.~Hua, Y.~Makihara, Y.~Yagi, Pedestrian detection by using a spatio-temporal
+  histogram of oriented gradients, IEICE TRANSACTIONS on Information and
+  Systems 96~(6) (2013) 1376--1386.
+
+\bibitem{H20}
+H.~Schneiderman, Feature-centric evaluation for efficient cascaded object
+  detection, in: Proceedings of the 2004 IEEE Computer Society Conference on
+  Computer Vision and Pattern Recognition, 2004. CVPR 2004., Vol.~2, IEEE,
+  2004, pp. II--II.
+
+\bibitem{H21}
+P.~Viola, M.~Jones, Rapid object detection using a boosted cascade of simple
+  features, in: Proceedings of the 2001 IEEE computer society conference on
+  computer vision and pattern recognition. CVPR 2001, Vol.~1, Ieee, 2001, pp.
+  I--I.
+
+\bibitem{H22}
+Q.~Zhu, M.-C. Yeh, K.-T. Cheng, S.~Avidan, Fast human detection using a cascade
+  of histograms of oriented gradients, in: 2006 IEEE Computer Society
+  Conference on Computer Vision and Pattern Recognition (CVPR'06), Vol.~2,
+  IEEE, 2006, pp. 1491--1498.
+
+\bibitem{boyd2004convex}
+S.~Boyd, S.~P. Boyd, L.~Vandenberghe, Convex optimization, Cambridge university
+  press, 2004.
+
+\end{thebibliography}

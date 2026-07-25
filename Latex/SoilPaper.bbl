@@ -1,0 +1,314 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Zhang2019}
+X.~Zhang, W.~Sun, Y.~Cen, L.~Zhang, N.~Wang, {Predicting cadmium concentration
+  in soils using laboratory and field reflectance spectroscopy}, Science of the
+  Total Environment 650 (2019) 321--334.
+\newblock \href {https://doi.org/10.1016/j.scitotenv.2018.08.442}
+  {\path{doi:10.1016/j.scitotenv.2018.08.442}}.
+
+\bibitem{Bouma1997}
+J.~Bouma, {Soil Environmental Quality: A European Perspective}, Journal of
+  Environment Quality 26~(1) (1997) 26.
+\newblock \href {https://doi.org/10.2134/jeq1997.00472425002600010005x}
+  {\path{doi:10.2134/jeq1997.00472425002600010005x}}.
+
+\bibitem{Toth2013}
+G.~T{\'{o}}th, A.~Jones, L.~Montanarella, {LUCAS Topsoil Survey. Methodology,
+  data and results. JRC Technical Reports. Luxembourg. Publications Office of
+  the European Union, EUR26102 – Scientific and Technical Research series},
+  Springer Netherlands, 2013.
+\newblock \href {https://doi.org/10.2788/97922} {\path{doi:10.2788/97922}}.
+
+\bibitem{Udelhoven2003}
+T.~Udelhoven, C.~Emmerling, T.~Jarmer, {Quantitative analysis of soil chemical
+  properties with diffuse reflectance spectrometry and partial least-square
+  regression: A feasibility study}, Plant and Soil 251~(2) (2003) 319--329.
+\newblock \href {https://doi.org/10.1023/A:1023008322682}
+  {\path{doi:10.1023/A:1023008322682}}.
+
+\bibitem{Epema2003}
+G.~Epema, L.~Kooistra, J.~Wanders, Spectroscopy for the assessment of soil
+  properties in reconstructed river floodplains, in: M.~Habermeyer,
+  A.~M{\"u}ller, S.~Holzwarth (Eds.), Proceedings of the 3rd EARSeL Workshop on
+  Imaging Spectroscopy, 2003, pp. 188--195, herrsching, Germany ; Conference
+  date: 13-05-2003 Through 16-05-2003.
+
+\bibitem{Soriano-Disla2014}
+J.~M. Soriano-Disla, L.~J. Janik, R.~A. {Viscarra Rossel}, L.~M. MacDonald,
+  M.~J. McLaughlin, {The performance of visible, near-, and mid-infrared
+  reflectance spectroscopy for prediction of soil physical, chemical, and
+  biological properties}, Applied Spectroscopy Reviews 49~(2) (2014) 139--186.
+\newblock \href {https://doi.org/10.1080/05704928.2013.811081}
+  {\path{doi:10.1080/05704928.2013.811081}}.
+
+\bibitem{Ramirez-Lopez2013}
+L.~Ramirez-Lopez, T.~Behrens, K.~Schmidt, A.~Stevens, J.~A.~M. Dematt{\^{e}},
+  T.~Scholten, {The spectrum-based learner: A new local approach for modeling
+  soil vis–NIR spectra of complex datasets}, Geoderma 195-196 (2013)
+  268--279.
+\newblock \href {https://doi.org/10.1016/J.GEODERMA.2012.12.014}
+  {\path{doi:10.1016/J.GEODERMA.2012.12.014}}.
+
+\bibitem{Rossel2010a}
+R.~V. Rossel, T.~Behrens, {Using data mining to model and interpret soil
+  diffuse reflectance spectra}, Geoderma 158~(1-2) (2010) 46--54.
+\newblock \href {https://doi.org/10.1016/J.GEODERMA.2009.12.025}
+  {\path{doi:10.1016/J.GEODERMA.2009.12.025}}.
+
+\bibitem{BenDor2008}
+E.~Ben‐Dor, R.~Taylor, J.~Hill, J.~Dematt{\^{e}}, M.~Whiting, S.~Chabrillat,
+  S.~Sommer, {Imaging Spectrometry for Soil Applications}, Advances in Agronomy
+  97 (2008) 321--392.
+\newblock \href {https://doi.org/10.1016/S0065-2113(07)00008-9}
+  {\path{doi:10.1016/S0065-2113(07)00008-9}}.
+
+\bibitem{McBratney2006}
+A.~B. McBratney, B.~Minasny, R.~{Viscarra Rossel}, {Spectral soil analysis and
+  inference systems: A powerful combination for solving the soil data crisis},
+  Geoderma 136~(1-2) (2006) 272--278.
+\newblock \href {https://doi.org/10.1016/J.GEODERMA.2006.03.051}
+  {\path{doi:10.1016/J.GEODERMA.2006.03.051}}.
+
+\bibitem{bhr1}
+X.~Li, W.~Li, Y.~Xu, {Human age prediction based on DNA methylation using a
+  gradient boosting regressor}, Genes 9~(9) (2018) 424.
+
+\bibitem{bhr2}
+S.~Peter, F.~Diego, F.~Hamprecht, B.~Nadler, {Cost efficient gradient
+  boosting}, In Advances in Neural Information Processing Systems (2017)
+  1551--1561.
+
+\bibitem{bhr3}
+Z.~Wen, J.~Shi, B.~He, J.~Chen, K.~Ramamohanarao, Q.~Li, {Exploiting GPUs for
+  efficient gradient boosting decision tree training}, IEEE Transactions on
+  Parallel and Distributed Systems 30~(12) (2019) 2706--2717.
+
+\bibitem{bhr4}
+J.~Fan, X.~Wang, L.~Wu, H.~Zhou, F.~Zhang, X.~Yu, X.~Lu, Y.~Xiang, {Comparison
+  of Support Vector Machine and Extreme Gradient Boosting for predicting daily
+  global solar radiation using temperature and precipitation in humid
+  subtropical climates: A case study in China}, Energy Conversion and
+  Management 164 (2018) 102--111.
+
+\bibitem{bhr5}
+L.~Deng, J.~Pan, X.~Xu, W.~Yang, C.~Liu, H.~Liu, {PDRLGB: precise DNA-binding
+  residue prediction using a light gradient boosting machine}, BMC
+  bioinformatics 19~(19) (2018) 522.
+
+\bibitem{bhr6}
+G.~Ke, Q.~Meng, T.~Finley, T.~Wang, W.~Chen, W.~Ma, Q.~Ye, T.~Liu, {Lightgbm: A
+  highly efficient gradient boosting decision tree}, In Advances in neural
+  information processing systems (2017) 3146--3154.
+
+\bibitem{bhr7}
+G.~Einziger, M.~Goldstein, Y.~Sa’ar, I.~Segall, {Verifying robustness of
+  gradient boosted models}, In Proceedings of the AAAI Conference on Artificial
+  Intelligence 33 (2019) 2446--2453.
+
+\bibitem{bhr8}
+D.~L. Shrestha, D.~P. Solomatine, {Experiments with AdaBoost.RT, an improved
+  boosting scheme for regression}, Neural Computation 18~(7) (2006) 1678--1710.
+
+\bibitem{bhr9}
+R.~Valdovinos, J.~Sanchez, {Combining Multiple Classifiers with Dynamic
+  Weighted Voting}, in Proceedings of the 4th International Conference on
+  Hybrid Artificial Intelligence Systems LNAI 5572 (2009) 510--516.
+
+\bibitem{bhr10}
+H.~Shakibian, N.~Charkari, {MCW: A new weighting method for linear combination
+  of regressors in WSNS}, In 2010 5th International Symposium on
+  Telecommunications IEEE (2010) 231--236.
+
+\bibitem{bhr11}
+I.~Ludmila, {A Theoretical Study on Six Classifier Fusion Strategies}, IEEE
+  Trans. On Pattern Analysis and Machine Intelligence 24~(2) (2002) 281--288.
+
+\bibitem{bhr12}
+M.~Skurichina, R.~Duin, {Bagging, Boosting and the Random Subspace Method for
+  Linear Classifiers}, Pattern Analysis and Applications 5~(2) (2002) 121--135.
+
+\bibitem{bhr13}
+G.~Fumera, F.~Roli, {A theoretical and experimental analysis of linear
+  combiners for multiple classifier systems}, IEEE Trans. on Pattern Analysis
+  and Machine Intelligence 27~(6) (2005) 942--956.
+
+\bibitem{bhr14}
+D.~Tax, M.~Breukelen, R.~Duin, J.~Kittler, {Combining multiple classifiers by
+  averaging or by multiplying}, Pattern Recognition 33~(9) (2000) 1475--1485.
+
+\bibitem{bhr15}
+S.~Singh, S.~Kumar, J.~Dwivedi, {A novel soft computing method for engine RUL
+  prediction}, Multimedia Tools and Applications (2017) 1--23.
+
+\bibitem{Morellos2016}
+A.~Morellos, X.-E. Pantazi, D.~Moshou, T.~Alexandridis, R.~Whetton,
+  G.~Tziotzios, J.~Wiebensohn, R.~Bill, {Machine learning based prediction of
+  soil total nitrogen, organic carbon and moisture content by using VIS-NIR
+  spectroscopy}, Biosystems Engineering 152 (2016) 104--116.
+\newblock \href {https://doi.org/10.1016/J.BIOSYSTEMSENG.2016.04.018}
+  {\path{doi:10.1016/J.BIOSYSTEMSENG.2016.04.018}}.
+
+\bibitem{Tekin2013}
+Y.~Tekin, B.~Kuang, A.~Mouazen, Y.~Tekin, B.~Kuang, A.~M. Mouazen, {Potential
+  of On-Line Visible and Near Infrared Spectroscopy for Measurement of pH for
+  Deriving Variable Rate Lime Recommendations}, Sensors 13~(8) (2013)
+  10177--10190.
+\newblock \href {https://doi.org/10.3390/s130810177}
+  {\path{doi:10.3390/s130810177}}.
+
+\bibitem{ViscarraRossel2015}
+R.~A. {Viscarra Rossel}, W.~S. Hicks, {Soil organic carbon and its fractions
+  estimated by visible-near infrared transfer functions}, European Journal of
+  Soil Science 66~(3) (2015) 438--450.
+\newblock \href {https://doi.org/10.1111/ejss.12237}
+  {\path{doi:10.1111/ejss.12237}}.
+
+\bibitem{Nocita2015}
+M.~Nocita, A.~Stevens, B.~van Wesemael, D.~J. Brown, K.~D. Shepherd, E.~Towett,
+  R.~Vargas, L.~Montanarella, {Soil spectroscopy: an opportunity to be seized},
+  Global Change Biology 21~(1) (2015) 10--11.
+\newblock \href {https://doi.org/10.1111/gcb.12632}
+  {\path{doi:10.1111/gcb.12632}}.
+
+\bibitem{Feyziyev2016}
+F.~Feyziyev, M.~Babayev, S.~Priori, G.~L'Abate, {Using Visible-Near Infrared
+  Spectroscopy to Predict Soil Properties of Mugan Plain, Azerbaijan}, Open
+  Journal of Soil Science 06~(03) (2016) 52--58.
+\newblock \href {https://doi.org/10.4236/ojss.2016.63006}
+  {\path{doi:10.4236/ojss.2016.63006}}.
+
+\bibitem{Geladi1986}
+P.~Geladi, B.~R. Kowalski, {Partial least-squares regression: a tutorial},
+  Analytica Chimica Acta 185 (1986) 1--17.
+\newblock \href {https://doi.org/10.1016/0003-2670(86)80028-9}
+  {\path{doi:10.1016/0003-2670(86)80028-9}}.
+
+\bibitem{Smola2004}
+A.~J. Smola, B.~Sch{\"{o}}lkopf, {A tutorial on support vector regression},
+  Statistics and Computing 14~(3) (2004) 199--222.
+\newblock \href {https://doi.org/10.1023/B:STCO.0000035301.49549.88}
+  {\path{doi:10.1023/B:STCO.0000035301.49549.88}}.
+
+\bibitem{Friedman1991}
+J.~H. Friedman, {Multivariate Adaptive Regression Splines}, The Annals of
+  Statistics 19~(1) (1991) 1--67.
+\newblock \href {https://doi.org/10.1214/aos/1176347963}
+  {\path{doi:10.1214/aos/1176347963}}.
+
+\bibitem{Breiman2001}
+L.~Breiman, {Random forests}, Machine Learning 45~(1) (2001) 5--32.
+\newblock \href {https://doi.org/10.1023/A:1010933404324}
+  {\path{doi:10.1023/A:1010933404324}}.
+
+\bibitem{Vasques2008}
+G.~Vasques, S.~Grunwald, J.~Sickman, {Comparison of multivariate methods for
+  inferential modeling of soil carbon using visible/near-infrared spectra},
+  Geoderma 146~(1-2) (2008) 14--25.
+\newblock \href {https://doi.org/10.1016/J.GEODERMA.2008.04.007}
+  {\path{doi:10.1016/J.GEODERMA.2008.04.007}}.
+
+\bibitem{Gupta2018}
+A.~Gupta, H.~B. Vasava, B.~S. Das, A.~K. Choubey, {Local modeling approaches
+  for estimating soil properties in selected Indian soils using diffuse
+  reflectance data over visible to near-infrared region}, Geoderma 325 (2018)
+  59--71.
+\newblock \href {https://doi.org/10.1016/J.GEODERMA.2018.03.025}
+  {\path{doi:10.1016/J.GEODERMA.2018.03.025}}.
+
+\bibitem{Stevens2013}
+A.~Stevens, M.~Nocita, G.~Tóth, L.~Montanarella, B.~Wesemael, Prediction of
+  soil organic carbon at the european scale by visible and near infrared
+  reflectance spectroscopy, PLOS ONE 8 (2013) e66409.
+\newblock \href {https://doi.org/10.1371/journal.pone.0066409}
+  {\path{doi:10.1371/journal.pone.0066409}}.
+
+\bibitem{Toth2013a}
+G.~T{\'{o}}th, A.~Jones, L.~Montanarella, {The LUCAS topsoil database and
+  derived information on the regional variability of cropland topsoil
+  properties in the European Union}, Environmental Monitoring and Assessment
+  185~(9) (2013) 7409--7425.
+\newblock \href {https://doi.org/10.1007/s10661-013-3109-3}
+  {\path{doi:10.1007/s10661-013-3109-3}}.
+
+\bibitem{Wold1983}
+S.~Wold, H.~Martens, H.~Wold, The multivariate calibration problem in chemistry
+  solved by the pls method, in: B.~K{\aa}gstr{\"o}m, A.~Ruhe (Eds.), Matrix
+  Pencils, Springer Berlin Heidelberg, Berlin, Heidelberg, 1983, pp. 286--293.
+
+\bibitem{Seltman2013}
+H.~j. Seltman, {Experimental Design and Analysis}, Carnegie Mellon University,
+  2013.
+
+\bibitem{Murphy2012}
+K.~P. Murphy, {Machine learning : a probabilistic perspective}, MIT Press,
+  2012.
+
+\bibitem{Sakata2018}
+R.~Sakata, I.~Ohama, T.~Taniguchi, {An Extension of Gradient Boosted Decision
+  Tree Incorporating Statistical Tests}, in: 2018 IEEE International Conference
+  on Data Mining Workshops (ICDMW), IEEE, 2018, pp. 964--969.
+\newblock \href {https://doi.org/10.1109/ICDMW.2018.00139}
+  {\path{doi:10.1109/ICDMW.2018.00139}}.
+
+\bibitem{Pal2017}
+R.~Pal, {Overview of predictive modeling based on genomic characterizations},
+  Predictive Modeling of Drug Sensitivity (2017) 121--148\href
+  {https://doi.org/10.1016/b978-0-12-805274-7.00006-3}
+  {\path{doi:10.1016/b978-0-12-805274-7.00006-3}}.
+
+\bibitem{kuncheva2014}
+L.~I. Kuncheva, {Combining Pattern Classifiers: Methods and Algorithms}, 2nd
+  Edition, Wiley Publishing, 2014.
+
+\bibitem{Stone1993}
+R.~Stone, {Improved statistical procedure for the evaluation of solar radiation
+  estimation models}, Solar Energy 51~(4) (1993) 289--291.
+\newblock \href {https://doi.org/10.1016/0038-092X(93)90124-7}
+  {\path{doi:10.1016/0038-092X(93)90124-7}}.
+
+\bibitem{NAGELKERKE1991}
+N.~J.~D. NAGELKERKE, {A note on a general definition of the coefficient of
+  determination}, Biometrika 78~(3) (1991) 691--692.
+\newblock \href {https://doi.org/10.1093/biomet/78.3.691}
+  {\path{doi:10.1093/biomet/78.3.691}}.
+
+\bibitem{Williams2001}
+P.~Williams, K.~H. Norris, {American Association of Cereal Chemists.},
+  {Near-infrared technology : in the agricultural and food industries},
+  American Association of Cereal Chemists, 2001.
+
+\bibitem{lavalle2004relationship}
+S.~M. LaValle, M.~S. Branicky, S.~R. Lindemann, On the relationship between
+  classical grid search and probabilistic roadmaps, The International Journal
+  of Robotics Research 23~(7-8) (2004) 673--692.
+
+\bibitem{scikit-learn}
+F.~Pedregosa, G.~Varoquaux, A.~Gramfort, V.~Michel, B.~Thirion, O.~Grisel,
+  M.~Blondel, P.~Prettenhofer, R.~Weiss, V.~Dubourg, J.~Vanderplas, A.~Passos,
+  D.~Cournapeau, M.~Brucher, M.~Perrot, E.~Duchesnay, Scikit-learn: Machine
+  learning in {P}ython, Journal of Machine Learning Research 12 (2011)
+  2825--2830.
+
+\bibitem{Brady1990}
+N.~C. Brady, {The nature and properties of soils}, Macmillan, 1990.
+
+\bibitem{worldagroforestrycentre2007}
+W.~A. Centre, \href{http://www.worldagroforestrycentre.org}{The icraf/isric
+  spectral library}, soil-Plant Spectral Diagnostics laboratory, United Nations
+  Avenue, Nairobi, Kenya. (2007).
+\newline\urlprefix\url{http://www.worldagroforestrycentre.org}
+
+\bibitem{vaseghi2008advanced}
+S.~V. Vaseghi,
+  \href{/brokenurl#sharif.ir/~bahram/sp4cl/MainReferences/advancedDigitalSignalProcessingAndNoiseReduction.pdf}{Advanced
+  Digital Signal Processing and Noise Reduction}, John Wiley \& Sons, New York,
+  2008.
+\newline\urlprefix\url{/brokenurl#sharif.ir/~bahram/sp4cl/MainReferences/advancedDigitalSignalProcessingAndNoiseReduction.pdf}
+
+\end{thebibliography}
