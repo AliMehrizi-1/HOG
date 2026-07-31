@@ -1,0 +1,94 @@
+{
+  "status": "COMPLETED",
+  "representative_image": "Images\\home.jpg",
+  "image_shape_after_preprocessing": [
+    160,
+    160
+  ],
+  "seed": 42,
+  "common_roi_pad": 32,
+  "methods": {
+    "Sobel": {
+      "operator": "cv2.Sobel",
+      "ksize": 3
+    },
+    "Method I": {
+      "algorithm": 1,
+      "name": "Direct squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method II": {
+      "algorithm": 2,
+      "name": "Iterative squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method III": {
+      "algorithm": 3,
+      "name": "Correntropy loss",
+      "n": 16,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/final_parameter_analysis/joint_correntropy_selection.csv",
+      "selection_role": "Balanced"
+    }
+  },
+  "hog": {
+    "cell_size": 8,
+    "orientations": 9,
+    "block_size_cells": 2,
+    "fuzzy": true,
+    "normalization": "L2-Hys",
+    "robust": true,
+    "robust_weighting": "huber",
+    "robust_delta": 2.0,
+    "robust_window": 5,
+    "min_weight": 0.05,
+    "visualization_percentile": 95.0
+  },
+  "solver": {
+    "tol": 0.001,
+    "max_iter": 500,
+    "init_sigma": null
+  },
+  "display_scale": "one pooled positive-pixel percentile across all four HOG panels",
+  "package_versions": {
+    "numpy": "2.2.6",
+    "opencv-python": "4.13.0.92",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "matplotlib": "3.10.9",
+    "python": "3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0"
+  },
+  "scenarios": {
+    "gaussian_20db": {
+      "kind": "Gaussian",
+      "target_snr_db": 20.0,
+      "achieved_snr_db": 19.982002108488295,
+      "seed": 42,
+      "noisy_image_sha256": "262bb10f260a821d1657e1b5783daa7517aaaaeb319c3edb7f1482be7ff65c03",
+      "displayed_input_roi_shape": [
+        96,
+        96
+      ],
+      "output": "results\\sobel_comparison\\qualitative_gaussian_20db.png"
+    },
+    "sp10": {
+      "kind": "salt-and-pepper",
+      "density_percent": 10.0,
+      "seed": 42,
+      "noisy_image_sha256": "c1ba3f014d19a8d7055a2dc40aa70e674e10fa8269a5989cb9579eaee9987a71",
+      "displayed_input_roi_shape": [
+        96,
+        96
+      ],
+      "output": "results\\sobel_comparison\\qualitative_sp10.png"
+    }
+  }
+}

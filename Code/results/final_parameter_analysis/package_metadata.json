@@ -1,0 +1,138 @@
+{
+  "model_note": "This experiment evaluates a separable 1-D Taylor model applied independently along x and y. It is not the joint full 2-D Taylor model.",
+  "metric_note": "Matched-clean metrics measure noise stability, not absolute derivative accuracy.",
+  "seed": 42,
+  "source_image": "Images\\cameraman.png",
+  "source_image_sha256": "d3f1ccd5275db55ef2e362fdf3c858192ecd464ecbeeba2a1c0e4d3e1ddd049d",
+  "sensitivity_csv": "parameter_analysis_results.csv",
+  "polynomial_order": 3,
+  "n_definition": "number of symmetric samples per axis; x and y are solved independently",
+  "qualitative": {
+    "noise": "saltpepper_10",
+    "algorithms": [
+      1,
+      3
+    ],
+    "n_values": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "h_values": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "source_scaling": "cropped from existing dense figures rendered with one pooled 95th-percentile HOG scale",
+    "common_pad": 16
+  },
+  "joint_sweep": {
+    "configurations": [
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        16,
+        2
+      ],
+      [
+        16,
+        3
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        32,
+        1
+      ]
+    ],
+    "noise_scenarios": [
+      "saltpepper_5",
+      "saltpepper_10"
+    ],
+    "runtime_repeats": 3,
+    "common_pad": 32,
+    "selection": {
+      "fastest": [
+        16,
+        4
+      ],
+      "balanced": [
+        16,
+        4
+      ],
+      "maximum_weighted_robustness": [
+        32,
+        1
+      ],
+      "robustness_score": "raw SP5/SP10 metrics are averaged per configuration before min-max benefit scaling across configurations; (0.20 inverse RMSE + 0.45 inverse HOG error + 0.30 cosine) / 0.95",
+      "balanced_score": "harmonic mean of robustness_score and inverse min-max log-runtime benefit"
+    }
+  },
+  "runtime_scaling": {
+    "image_sizes": [
+      64,
+      128,
+      192,
+      256
+    ],
+    "n_values": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "h": 1,
+    "noise_scenario": "saltpepper_10",
+    "algorithms": [
+      1,
+      2,
+      3
+    ],
+    "runtime_repeats": 3,
+    "common_pad": 16,
+    "benchmark_order_seed": 42,
+    "runtime_definition": "timer includes noisy gradient estimation, common-ROI crop, and robust HOG; image loading/resizing, noise generation, and solver/design-matrix construction are excluded; median and descriptive IQR across repeated trials",
+    "native_solve_area": "(image_side - n)^2 centres for h=1, before common-ROI cropping; timings are not normalized per output pixel",
+    "spread_interpretation": "IQR over three timing repeats is descriptive, not a confidence interval"
+  },
+  "solver": {
+    "tol": 0.001,
+    "max_iter": 500,
+    "init_sigma": null
+  },
+  "hog": {
+    "normalization": "L2-Hys",
+    "robust": true,
+    "weighting": "huber",
+    "delta": 2.0,
+    "window": 5,
+    "visualization_percentile": 95.0
+  },
+  "environment": {
+    "python": "3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0",
+    "processor": "Intel64 Family 6 Model 158 Stepping 10, GenuineIntel",
+    "logical_cpu_count": 6,
+    "opencv_threads": 6,
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null,
+      "VECLIB_MAXIMUM_THREADS": null
+    },
+    "numpy": "2.2.6",
+    "opencv": "4.13.0",
+    "matplotlib": "3.10.9"
+  }
+}

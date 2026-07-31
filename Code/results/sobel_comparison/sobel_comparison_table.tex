@@ -1,0 +1,20 @@
+\begin{tabular}{llccc}
+\toprule
+Noise & Method & HOG Relative Error & Cosine Similarity & Runtime (s) \\
+\midrule
+Gaussian 20 dB & Sobel & 0.3580 $\pm$ 0.1954 & 0.9223 $\pm$ 0.0935 & \textbf{0.0276 $\pm$ 0.0108} \\
+ & Method I & 0.1760 $\pm$ 0.0591 & 0.9830 $\pm$ 0.0116 & 0.0326 $\pm$ 0.0120 \\
+ & Method II & 0.1758 $\pm$ 0.0587 & 0.9831 $\pm$ 0.0115 & 0.1222 $\pm$ 0.0487 \\
+ & Method III & \textbf{0.1331 $\pm$ 0.0248} & \textbf{0.9909 $\pm$ 0.0032} & 1.0603 $\pm$ 0.6004 \\
+\midrule
+Salt-and-pepper 5\% & Sobel & 0.4983 $\pm$ 0.1051 & 0.8735 $\pm$ 0.0518 & \textbf{0.0267 $\pm$ 0.0109} \\
+ & Method I & 0.3488 $\pm$ 0.0768 & 0.9366 $\pm$ 0.0270 & 0.0328 $\pm$ 0.0125 \\
+ & Method II & 0.3483 $\pm$ 0.0768 & 0.9368 $\pm$ 0.0270 & 0.1268 $\pm$ 0.0472 \\
+ & Method III & \textbf{0.1952 $\pm$ 0.0463} & \textbf{0.9800 $\pm$ 0.0080} & 1.1947 $\pm$ 0.7826 \\
+\midrule
+Salt-and-pepper 10\% & Sobel & 0.6325 $\pm$ 0.1201 & 0.7973 $\pm$ 0.0754 & \textbf{0.0270 $\pm$ 0.0109} \\
+ & Method I & 0.4989 $\pm$ 0.0663 & 0.8737 $\pm$ 0.0323 & 0.0326 $\pm$ 0.0124 \\
+ & Method II & 0.4987 $\pm$ 0.0661 & 0.8738 $\pm$ 0.0322 & 0.1260 $\pm$ 0.0463 \\
+ & Method III & \textbf{0.3088 $\pm$ 0.0679} & \textbf{0.9503 $\pm$ 0.0187} & 1.2378 $\pm$ 0.8269 \\
+\bottomrule
+\end{tabular}

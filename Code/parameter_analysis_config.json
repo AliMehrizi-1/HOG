@@ -1,0 +1,176 @@
+{
+  "model_note": "This experiment evaluates a separable 1-D Taylor model applied independently along x and y. It is not the joint full 2-D Taylor model.",
+  "image": "Images/cameraman.png",
+  "resized_shape": [
+    256,
+    256
+  ],
+  "random_seed": 42,
+  "polynomial_order": 3,
+  "n_definition": "number of symmetric samples per axis; horizontal and vertical systems are solved independently",
+  "per_axis_matrix_shapes": {
+    "4": [
+      4,
+      3
+    ],
+    "8": [
+      8,
+      3
+    ],
+    "16": [
+      16,
+      3
+    ],
+    "32": [
+      32,
+      3
+    ]
+  },
+  "per_axis_design_matrix_diagnostics": [
+    {
+      "experiment": "n",
+      "n": 4,
+      "h": 1,
+      "shape": [
+        4,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 6.655299354176352
+    },
+    {
+      "experiment": "n",
+      "n": 8,
+      "h": 1,
+      "shape": [
+        8,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 6.653937122000236
+    },
+    {
+      "experiment": "n",
+      "n": 16,
+      "h": 1,
+      "shape": [
+        16,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 20.020445776586005
+    },
+    {
+      "experiment": "n",
+      "n": 32,
+      "h": 1,
+      "shape": [
+        32,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 74.36864637380216
+    },
+    {
+      "experiment": "h",
+      "n": 8,
+      "h": 1,
+      "shape": [
+        8,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 6.653937122000236
+    },
+    {
+      "experiment": "h",
+      "n": 8,
+      "h": 2,
+      "shape": [
+        8,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 22.55663256853403
+    },
+    {
+      "experiment": "h",
+      "n": 8,
+      "h": 3,
+      "shape": [
+        8,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 50.276660952808825
+    },
+    {
+      "experiment": "h",
+      "n": 8,
+      "h": 4,
+      "shape": [
+        8,
+        3
+      ],
+      "rank": 3,
+      "condition_number": 89.23867307626321
+    }
+  ],
+  "n_analysis": {
+    "h": 1,
+    "n_values": [
+      4,
+      8,
+      16,
+      32
+    ]
+  },
+  "h_analysis": {
+    "n": 8,
+    "h_values": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "noise_scenarios": [
+    {
+      "name": "no_noise",
+      "saltpepper_density_percent": 0.0
+    },
+    {
+      "name": "saltpepper_5",
+      "saltpepper_density_percent": 5.0
+    },
+    {
+      "name": "saltpepper_10",
+      "saltpepper_density_percent": 10.0
+    }
+  ],
+  "algorithms": {
+    "1": "Direct squared loss",
+    "2": "Iterative squared loss",
+    "3": "Correntropy loss"
+  },
+  "common_valid_pad": 16,
+  "gradient_metric": "Matched-clean noise-stability RMSE: sqrt(mean((magnitude_noisy-magnitude_clean)^2)); not absolute derivative accuracy",
+  "hog_relative_error": "||H_noisy-H_clean||_2 / ||H_clean||_2",
+  "hog_cosine_similarity": "dot(H_noisy,H_clean)/(||H_noisy||_2 ||H_clean||_2)",
+  "final_residual": "Unweighted RMS Taylor-fit residual over both per-axis systems on the common analysis ROI; diagnostic, not correntropy loss",
+  "convergence_definition": "converged=true only when both per-axis batch solves satisfy the strict all-pixel stopping rule before max_iter",
+  "runtime_definition": "Median of 3 noisy gradient-plus-HOG runs; per-configuration design-matrix setup and clean-reference computation excluded",
+  "solver_parameters": {
+    "tol": 0.001,
+    "max_iter": 500,
+    "init_sigma": null
+  },
+  "hog_configuration": {
+    "normalization": "L2-Hys",
+    "robust": true,
+    "robust_weighting": "huber",
+    "robust_delta": 2.0,
+    "robust_window": 5,
+    "visualization_percentile": 95.0
+  }
+}

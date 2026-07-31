@@ -1,0 +1,86 @@
+{
+  "status": "SKIPPED",
+  "reason": "Dataset images and/or human annotation directories are not available locally.",
+  "configured_dataset_root": "C:\\Users\\mehrizi.SAD\\Desktop\\HOG\\Code\\datasets\\MultiCue",
+  "expected_directory_structure": [
+    "<root>/images/<image-id>.jpg",
+    "<root>/groundTruth/<image-id>.mat"
+  ],
+  "methods": {
+    "Sobel": {
+      "operator": "cv2.Sobel",
+      "ksize": 3
+    },
+    "Method I": {
+      "algorithm": 1,
+      "name": "Direct squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method II": {
+      "algorithm": 2,
+      "name": "Iterative squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method III": {
+      "algorithm": 3,
+      "name": "Correntropy loss",
+      "n": 16,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/final_parameter_analysis/joint_correntropy_selection.csv",
+      "selection_role": "Balanced"
+    }
+  },
+  "edge_evaluation": {
+    "root": "datasets/MultiCue",
+    "images_directory": "images",
+    "annotations_directory": "groundTruth",
+    "image_extensions": [
+      ".jpg",
+      ".jpeg",
+      ".png",
+      ".bmp"
+    ],
+    "annotation_extension": ".mat",
+    "edge_tolerance_pixels": 2.0,
+    "thresholds": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25,
+      0.3,
+      0.35,
+      0.4,
+      0.45,
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      1.0
+    ],
+    "human_annotation_policy": "Score each prediction independently against every human boundary map and pool TP, FP, and FN counts across annotations."
+  },
+  "package_versions": {
+    "numpy": "2.2.6",
+    "opencv-python": "4.13.0.92",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "matplotlib": "3.10.9",
+    "python": "3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0"
+  }
+}

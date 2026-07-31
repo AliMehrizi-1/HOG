@@ -1,0 +1,78 @@
+{
+  "images": [
+    "Images/cameraman.png",
+    "Images/lena.png",
+    "Images/home.jpg",
+    "Images/girl.png",
+    "Images/flower.jpg",
+    "Images/clock.png"
+  ],
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "max_dimension": 256,
+  "conditions": [
+    {
+      "noise_family": "saltpepper",
+      "level": 1.0
+    },
+    {
+      "noise_family": "saltpepper",
+      "level": 5.0
+    },
+    {
+      "noise_family": "saltpepper",
+      "level": 10.0
+    },
+    {
+      "noise_family": "gaussian",
+      "level": 10.0
+    },
+    {
+      "noise_family": "gaussian",
+      "level": 20.0
+    },
+    {
+      "noise_family": "gaussian",
+      "level": 30.0
+    }
+  ],
+  "normalizations": [
+    "L2",
+    "L2-Hys"
+  ],
+  "parameters": {
+    "order": 16,
+    "spacing": 1,
+    "algorithm": 3,
+    "smoothing_sigma": 0.0,
+    "tol": 0.001,
+    "max_iter": 15,
+    "init_sigma": null,
+    "fuzzy": true,
+    "robust_weighting": "huber",
+    "robust_delta": 2.0,
+    "robust_window": 5,
+    "visualization_percentile": 95.0
+  },
+  "metric_definitions": {
+    "gradient_stability_rmse": "sqrt(mean((dx_noisy-dx_clean)^2 + (dy_noisy-dy_clean)^2)); each method uses its own clean output",
+    "hog_cosine_similarity": "dot(H_noisy,H_clean)/(||H_noisy|| ||H_clean||)",
+    "hog_relative_error": "||H_noisy-H_clean||/||H_clean||",
+    "common_reference": "All noisy HOG descriptors compared with clean Taylor + Standard HOG",
+    "gaussian_snr": "10*log10(mean((image-mean(image))^2)/mean(noise^2)); Gaussian values are not clipped",
+    "uncertainty": "Noise seeds are averaged within each image; plotted 95% intervals are 1.96*SD/sqrt(n_images) across images"
+  },
+  "software": {
+    "python": "3.10.2",
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "opencv": "4.13.0",
+    "scikit_image": "0.25.2",
+    "matplotlib": "3.10.9"
+  },
+  "git_sha": null,
+  "elapsed_seconds": 309.3728282000011
+}

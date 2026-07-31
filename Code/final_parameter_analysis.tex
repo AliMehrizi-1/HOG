@@ -1,0 +1,163 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{results/final_parameter_analysis/}}
+\captionsetup{font=small,labelfont=bf}
+
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+
+\begin{document}
+	
+	\section*{Parameter Sensitivity and Computational Analysis}
+	\phantomsection
+	\label{sec:parameter-sensitivity}
+	
+	This section evaluates the effects of the neighborhood sample count $n$ and
+	sample spacing $h$ on the direct squared-loss, iterative squared-loss, and
+	correntropy gradient estimators. The implementation applies a separable
+	one-dimensional Taylor approximation independently along the horizontal and
+	vertical axes, with polynomial order $p=3$. The parameter $n$ denotes the
+	number of symmetric samples per axis, whereas $h$ specifies the distance
+	between successive samples. All gradient RMSE and HOG metrics are computed
+	relative to the clean output obtained with the same estimator and parameter
+	setting. They therefore measure \emph{noise stability}, rather than absolute
+	derivative accuracy. Gaussian noise at 20~dB is reported as the
+	representative distributed-noise condition. Clean matched-self rows are
+	omitted because they trivially give RMSE $=0$, HOG error $=0$, and cosine
+	similarity $=1$.
+	
+	\textbf{Influence of the sample count.}
+	The $n$ sensitivity experiment fixes $h=1$ and evaluates
+	$n\in\{4,8,16,32\}$. Increasing $n$ substantially reduces gradient RMSE for
+	all three methods. Under Gaussian noise at 20~dB, for example, the direct
+	squared-loss RMSE decreases from 7.077 at $n=4$ to 0.302 at $n=32$.
+	Nevertheless, the HOG relative error does not improve monotonically: for the
+	same method it changes from 0.3527 at $n=8$ to 0.3671 at $n=32$. Thus, a
+	larger support improves gradient-magnitude stability but may reduce spatial
+	locality and alter the orientation distribution used by HOG.
+	
+	Under salt-and-pepper noise, correntropy benefits markedly from larger
+	neighborhoods. At 5\% noise and $n=16$, it reduces RMSE from 4.686 to 2.262
+	and HOG relative error from 0.5535 to 0.2526 relative to direct squared loss,
+	while increasing cosine similarity from 0.8468 to 0.9681. At $n=32$, the
+	corresponding correntropy values improve to 0.899, 0.2027, and 0.9795.
+	A similar advantage is observed at 10\% noise. The identical direct and
+	correntropy results observed in several $n=4$ cases should be interpreted
+	carefully: with $p=3$ and only four samples, the system has limited redundancy
+	for robust reweighting.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.96\linewidth]{n_visual_comparison.png}
+		\caption{Qualitative Robust-HOG comparison under 10\% salt-and-pepper noise
+			for different values of $n$, with $h=1$ and $p=3$.}
+		\label{fig:n-visual-comparison}
+	\end{figure}
+	
+	\textbf{Influence of sample spacing.}
+	The $h$ sensitivity experiment fixes $n=8$ and evaluates
+	$h\in\{1,2,3,4\}$. Under Gaussian noise, increasing $h$ reduces gradient
+	RMSE but slightly degrades the HOG metrics. For direct squared loss, RMSE
+	decreases from 2.413 at $h=1$ to 0.573 at $h=4$, whereas HOG relative error
+	increases from 0.3527 to 0.3896. This indicates stronger smoothing without a
+	corresponding improvement in descriptor stability.
+	
+	The opposite tendency is observed under impulsive noise. At 5\%
+	salt-and-pepper noise, increasing the correntropy spacing from $h=1$ to $h=4$
+	reduces RMSE from 8.196 to 2.288, reduces HOG relative error from 0.4762 to
+	0.4120, and increases cosine similarity from 0.8866 to 0.9151. Similar
+	improvements occur at 10\% noise. Hence, $h=4$ provides the strongest tested
+	stability under salt-and-pepper noise, although it is the boundary of the
+	evaluated range and is not claimed to be globally optimal.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.96\linewidth]{h_visual_comparison.png}
+		\caption{Qualitative Robust-HOG comparison under 10\% salt-and-pepper noise
+			for different values of $h$, with $n=8$ and $p=3$.}
+		\label{fig:h-visual-comparison}
+	\end{figure}
+	
+	\textbf{Comparison of the three estimators.}
+	Tables~\ref{tab:n-sensitivity-main} and
+	\ref{tab:h-sensitivity-main} report the matched-setting results for Gaussian
+	noise at 20~dB and salt-and-pepper noise at 5\% and 10\%. Gaussian 20~dB is
+	used as the representative distributed-noise condition. Within each noise
+	and parameter setting, the three estimators are listed consecutively and use
+	the same image, region of interest, HOG settings, and seed-42 noise
+	realization. Clean matched-self rows are omitted because they trivially give
+	RMSE $=0$, HOG error $=0$, and cosine similarity $=1$.
+	
+	\input{results/final_parameter_analysis/parameter_sensitivity_main_tables.tex}
+	
+	The direct and iterative squared-loss methods produce almost identical HOG
+	metrics, while the iterative implementation is consistently several times
+	slower. For instance, at $n=16$ under 10\% salt-and-pepper noise, their
+	runtimes are 0.245~s and 0.990~s, although their HOG relative errors are
+	0.5896 and 0.5899. The iterative method therefore provides no substantial
+	practical advantage in the present experiments.
+	
+	Under the representative Gaussian 20~dB condition, the squared-loss
+	estimators are generally slightly more accurate and considerably faster than
+	correntropy. At $n=8$ and $h=1$, their RMSE values are 2.413, 2.342, and
+	3.023 for the direct, iterative, and correntropy methods, respectively. In
+	contrast, correntropy provides a clear advantage under salt-and-pepper noise,
+	particularly for $n=16$ and $n=32$. Its benefit should therefore be
+	interpreted as robustness to impulsive outliers rather than universal
+	superiority across noise models.
+	
+	\textbf{Computational cost.}
+	Figure~\ref{fig:runtime-scaling} reports the median runtime of the complete
+	gradient-plus-HOG pipeline. The direct estimator is consistently fastest,
+	followed by the iterative squared-loss method, while correntropy is
+	substantially more expensive because of its repeated data-dependent
+	reweighting. For a $256\times256$ image with $n=32$, the measured runtimes
+	are 0.328~s, 1.641~s, and 28.081~s for the direct, iterative, and correntropy
+	methods, respectively. Correntropy runtime also depends on convergence
+	behavior and is therefore not expected to vary strictly monotonically with
+	$n$.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.94\linewidth]{runtime_scaling_2d.png}
+		\caption{Median gradient-plus-HOG runtime under 10\% salt-and-pepper noise
+			for $h=1$ and $p=3$. The shared vertical axis is logarithmic, and shaded
+			regions show interquartile ranges over three repetitions.}
+		\label{fig:runtime-scaling}
+	\end{figure}
+	
+	\FloatBarrier
+	
+	\textbf{Recommended configurations.}
+	The results indicate that no single configuration is optimal for all noise
+	models and computational constraints. Direct squared loss with $n=4$ or
+	$n=8$ is the preferred efficiency-oriented configuration and remains
+	competitive under Gaussian noise. The iterative squared-loss method produces
+	similar quality at higher computational cost and is therefore retained mainly
+	as an optimization baseline. Among the measured correntropy candidates,
+	$(n,h)=(16,4)$ provides the most practical balance between impulsive-noise
+	stability and runtime, whereas $(n,h)=(32,1)$ provides the strongest measured
+	robustness at substantially higher cost.
+	
+	Overall, squared loss is preferable for Gaussian noise and
+	runtime-constrained applications, whereas correntropy is preferable when
+	robustness to salt-and-pepper noise is the primary requirement. These
+	conclusions are based on one source image and seed 42. Moreover, the $n$ and
+	$h$ studies are one-factor-at-a-time experiments; therefore, no unmeasured
+	combination, including $(32,4)$, is claimed to be optimal.
+	
+\end{document}

@@ -1,0 +1,61 @@
+{
+  "image_path": "Images/cameraman.png",
+  "noise_type": "saltpepper",
+  "noise_level": 10,
+  "random_seed": 42,
+  "gradient_metrics": {
+    "sobel_rmse": 27.676623862709445,
+    "taylor_rmse": 8.253373115609905,
+    "taylor_improvement_factor": 3.3533712186552718
+  },
+  "hog_metrics": {
+    "A_sobel_standard": {
+      "cosine_similarity": 0.8180263714290358,
+      "relative_error": 0.6032804133684238,
+      "common_reference_cosine": 0.7670748030158921,
+      "common_reference_relative_error": 0.6825323391533373
+    },
+    "B_taylor_standard": {
+      "cosine_similarity": 0.8440985173684317,
+      "relative_error": 0.5583931995213447,
+      "common_reference_cosine": 0.8440985173684317,
+      "common_reference_relative_error": 0.5583931995213447
+    },
+    "C_taylor_robust": {
+      "cosine_similarity": 0.8870403364962897,
+      "relative_error": 0.47530971693384116,
+      "common_reference_cosine": 0.8858403510564388,
+      "common_reference_relative_error": 0.4778276864014881
+    },
+    "robust_gain_over_taylor_standard": {
+      "cosine_similarity_delta": 0.042941819127857994,
+      "relative_error_reduction": 0.1487902837260962
+    },
+    "clean_robust_fidelity_to_taylor_standard": {
+      "cosine_similarity": 0.998031437745066,
+      "relative_error": 0.06274650994177589
+    }
+  },
+  "parameters": {
+    "neighbour_samples_n": 16,
+    "taylor_degree": 2,
+    "spacing_h": 1,
+    "algorithm": 3,
+    "smoothing_sigma": 0.0,
+    "tol": 0.001,
+    "max_iter": 15,
+    "correntropy_sigma": "automatic (MAD)",
+    "hog_normalization": "L2-Hys",
+    "fuzzy_hog": true,
+    "robust_weighting": "huber",
+    "robust_delta": 2.0,
+    "robust_window": 5,
+    "visualization_percentile": 95.0
+  },
+  "metric_definitions": {
+    "gradient_rmse": "sqrt(mean((dx_noisy-dx_clean)^2 + (dy_noisy-dy_clean)^2))",
+    "hog_cosine_similarity": "dot(H_noisy,H_clean)/(||H_noisy||_2 ||H_clean||_2)",
+    "hog_relative_error": "||H_noisy-H_clean||_2 / ||H_clean||_2"
+  },
+  "elapsed_seconds": 21.31673099999898
+}

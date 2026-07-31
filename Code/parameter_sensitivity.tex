@@ -1,0 +1,142 @@
+\subsection{Parameter Sensitivity and Computational Analysis}
+\label{subsec:parameter_sensitivity}
+
+This subsection investigates the effects of the neighborhood sample count
+$n$ and the sample spacing $h$ on the three proposed gradient estimators.
+The practical implementation uses a separable one-dimensional Taylor model
+independently along the horizontal and vertical axes. Therefore, $n$ denotes
+the number of symmetric samples per axis, while $h$ determines the distance
+between consecutive sampling locations. The polynomial order is fixed to
+$p=3$ throughout this analysis.
+
+\subsubsection{Effect of the Neighborhood Sample Count}
+
+To study the influence of $n$, the spacing parameter is fixed to $h=1$, and
+$n\in\{4,8,16,32\}$ is evaluated. A representative qualitative comparison is
+shown in Fig.~\ref{fig:n_visual_comparison}, while the corresponding numerical
+results are summarized in Table~\ref{tab:parameter_summary}.
+
+Increasing $n$ generally improves the noise stability of the estimated
+gradient magnitude. In particular, the gradient RMSE decreases substantially
+as the number of samples increases. The correntropy-based method also exhibits
+a consistent reduction in HOG relative error and an increase in cosine
+similarity for larger values of $n$. However, this improvement is accompanied
+by a considerable increase in computational cost, especially for the
+correntropy-based estimator.
+
+For the squared-loss methods, a lower gradient RMSE does not always lead to a
+more stable HOG descriptor. This observation indicates that increasing the
+support of the polynomial fit may improve gradient consistency while modifying
+local orientation information. Consequently, the gradient and descriptor
+metrics are reported separately.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{figures/n_visual_comparison}
+	\caption{Representative HOG results for different values of the symmetric
+		sample count $n$, with $h=1$ and polynomial order $p=3$.}
+	\label{fig:n_visual_comparison}
+\end{figure}
+
+\subsubsection{Effect of the Sample Spacing}
+
+The influence of $h$ is evaluated by fixing $n=8$ and considering
+$h\in\{1,2,3,4\}$. Figure~\ref{fig:h_visual_comparison} presents a representative
+visual comparison.
+
+Within the tested interval, increasing $h$ improves the matched-clean
+stability metrics under salt-and-pepper noise. The HOG cosine similarity
+increases, whereas the HOG relative error and gradient RMSE decrease. The
+correntropy-based method consistently provides the most stable descriptor.
+The value $h=4$ achieves the best measured noise stability, while $h=3$ is a
+more conservative choice when edge localization and numerical conditioning
+are also considered. Since $h=4$ is the boundary of the tested range, it is
+not claimed to be a global optimum.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{figures/h_visual_comparison}
+	\caption{Representative HOG results for different values of the sample
+		spacing $h$, with $n=8$ and polynomial order $p=3$.}
+	\label{fig:h_visual_comparison}
+\end{figure}
+
+\subsubsection{Quantitative Comparison}
+
+Table~\ref{tab:parameter_summary} summarizes representative configurations
+using gradient RMSE, HOG relative error, cosine similarity, and execution time.
+The reported errors compare each noisy output with the clean output generated
+using the same estimator parameters. Therefore, these metrics quantify noise
+stability rather than absolute derivative accuracy.
+
+\begin{table}[t]
+	\centering
+	\caption{Representative parameter configurations and their accuracy--runtime
+		trade-offs. The numerical entries should be populated automatically from the
+		experiment CSV file.}
+	\label{tab:parameter_summary}
+	\resizebox{\linewidth}{!}{
+		\begin{tabular}{lccccccc}
+			\hline
+			Method & $n$ & $h$ & Noise & Gradient RMSE &
+			HOG error & Cosine & Time (s) \\
+			\hline
+			Direct squared loss    & 4  & 3 & SP 5\%  & -- & -- & -- & -- \\
+			Direct squared loss    & 8  & 3 & SP 10\% & -- & -- & -- & -- \\
+			Correntropy loss       & 16 & 1 & SP 5\%  & -- & -- & -- & -- \\
+			Correntropy loss       & 32 & 1 & SP 10\% & -- & -- & -- & -- \\
+			Correntropy loss       & 8  & 4 & SP 5\%  & -- & -- & -- & -- \\
+			\hline
+	\end{tabular}}
+\end{table}
+
+\subsubsection{Computational Complexity}
+
+Figure~\ref{fig:runtime_analysis} shows the execution time as a function of
+the image size and the sample count. The non-iterative squared-loss estimator
+is consistently the fastest method. The iterative squared-loss estimator
+requires additional computation while producing results close to the direct
+solution. The correntropy-based estimator achieves the strongest robustness
+against impulsive noise, but its repeated weighted least-squares updates
+introduce a substantial runtime penalty.
+
+The computational cost increases with both the image dimensions and the
+number of neighborhood samples. Therefore, large values of $n$ should only be
+used when robustness has priority over inference time. A logarithmic time axis
+is used because the execution times of the compared methods differ by more
+than one order of magnitude.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\linewidth]{figures/runtime_analysis}
+	\caption{Execution-time comparison for the three proposed methods over
+		different image sizes and neighborhood sample counts.}
+	\label{fig:runtime_analysis}
+\end{figure}
+
+\subsubsection{Recommended Configurations}
+
+The results reveal that no single configuration is optimal for all practical
+requirements. Three operating profiles are therefore recommended:
+
+\begin{itemize}
+	\item \textbf{Efficiency-oriented configuration:}
+	direct squared loss with a small neighborhood, such as $n=4$ or $n=8$.
+	This configuration provides the lowest execution time.
+	
+	\item \textbf{Balanced configuration:}
+	correntropy loss with approximately $n=16$ and a moderate spacing such as
+	$h=3$. This setting provides a practical compromise between descriptor
+	stability and computational cost.
+	
+	\item \textbf{Robustness-oriented configuration:}
+	correntropy loss with $n=32$ and $h=1$, which achieves the strongest
+	measured robustness among the jointly observed configurations.
+\end{itemize}
+
+In the independent spacing sweep with $n=8$, $h=4$ provides the best tested
+noise stability. However, the present one-factor-at-a-time experiments do not
+establish $(n,h)=(32,4)$ as a joint optimum. Overall, Method~I is preferred
+when computational efficiency is dominant, Method~II provides only limited
+improvement over Method~I for additional cost, and Method~III is preferred
+when robustness to impulsive noise is the primary objective.

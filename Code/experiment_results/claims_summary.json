@@ -1,0 +1,52 @@
+{
+  "gradient": {
+    "n": 108,
+    "taylor_lower_rmse_win_rate": 1.0
+  },
+  "robust_hog_vs_taylor_standard": {
+    "saltpepper_L2": {
+      "n": 54,
+      "own_clean_cosine_win_rate": 1.0,
+      "own_clean_relative_error_win_rate": 1.0,
+      "common_reference_cosine_win_rate": 0.9074074074074074,
+      "common_reference_relative_error_win_rate": 0.9074074074074074,
+      "mean_own_clean_cosine_delta": 0.04574892374094788,
+      "mean_own_clean_relative_error_reduction": 0.11859508016444474,
+      "mean_common_reference_cosine_delta": 0.04417535912886377,
+      "mean_common_reference_relative_error_reduction": 0.10677767221733968
+    },
+    "saltpepper_L2-Hys": {
+      "n": 54,
+      "own_clean_cosine_win_rate": 1.0,
+      "own_clean_relative_error_win_rate": 1.0,
+      "common_reference_cosine_win_rate": 0.9814814814814815,
+      "common_reference_relative_error_win_rate": 0.9814814814814815,
+      "mean_own_clean_cosine_delta": 0.038043890734998774,
+      "mean_own_clean_relative_error_reduction": 0.10123847385438778,
+      "mean_common_reference_cosine_delta": 0.03644045538242107,
+      "mean_common_reference_relative_error_reduction": 0.09138960607809601
+    },
+    "gaussian_L2": {
+      "n": 54,
+      "own_clean_cosine_win_rate": 0.25925925925925924,
+      "own_clean_relative_error_win_rate": 0.25925925925925924,
+      "common_reference_cosine_win_rate": 0.18518518518518517,
+      "common_reference_relative_error_win_rate": 0.18518518518518517,
+      "mean_own_clean_cosine_delta": -0.0008301541222764551,
+      "mean_own_clean_relative_error_reduction": -0.002477372839738337,
+      "mean_common_reference_cosine_delta": -0.0019424321039320667,
+      "mean_common_reference_relative_error_reduction": -0.007353308914261634
+    },
+    "gaussian_L2-Hys": {
+      "n": 54,
+      "own_clean_cosine_win_rate": 0.35185185185185186,
+      "own_clean_relative_error_win_rate": 0.35185185185185186,
+      "common_reference_cosine_win_rate": 0.1111111111111111,
+      "common_reference_relative_error_win_rate": 0.1111111111111111,
+      "mean_own_clean_cosine_delta": -0.00022925280890634804,
+      "mean_own_clean_relative_error_reduction": -0.0007812522173329316,
+      "mean_common_reference_cosine_delta": -0.001610127159209983,
+      "mean_common_reference_relative_error_reduction": -0.005617276270881379
+    }
+  }
+}

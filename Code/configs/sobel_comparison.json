@@ -1,0 +1,84 @@
+{
+  "seed": 42,
+  "representative_image": "Images/home.jpg",
+  "test_images": [
+    "Images/Synthetic.png",
+    "Images/cameraman.png",
+    "Images/clock.png",
+    "Images/flower.jpg",
+    "Images/girl.png",
+    "Images/home.jpg",
+    "Images/lena.png"
+  ],
+  "max_image_dimension": 160,
+  "output_directory": "results/sobel_comparison",
+  "noise": {
+    "gaussian_snr_db": 20.0,
+    "salt_pepper_percent": [5.0, 10.0]
+  },
+  "methods": {
+    "Sobel": {
+      "operator": "cv2.Sobel",
+      "ksize": 3
+    },
+    "Method I": {
+      "algorithm": 1,
+      "name": "Direct squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method II": {
+      "algorithm": 2,
+      "name": "Iterative squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method III": {
+      "algorithm": 3,
+      "name": "Correntropy loss",
+      "n": 16,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/final_parameter_analysis/joint_correntropy_selection.csv",
+      "selection_role": "Balanced"
+    }
+  },
+  "solver": {
+    "tol": 0.001,
+    "max_iter": 500,
+    "init_sigma": null
+  },
+  "hog": {
+    "cell_size": 8,
+    "orientations": 9,
+    "block_size_cells": 2,
+    "fuzzy": true,
+    "normalization": "L2-Hys",
+    "robust": true,
+    "robust_weighting": "huber",
+    "robust_delta": 2.0,
+    "robust_window": 5,
+    "min_weight": 0.05,
+    "visualization_percentile": 95.0
+  },
+  "common_roi_pad": 32,
+  "runtime_repeats": 1,
+  "qualitative_dpi": 300,
+  "multicue": {
+    "root": "datasets/MultiCue",
+    "images_directory": "images",
+    "annotations_directory": "groundTruth",
+    "image_extensions": [".jpg", ".jpeg", ".png", ".bmp"],
+    "annotation_extension": ".mat",
+    "edge_tolerance_pixels": 2.0,
+    "thresholds": [
+      0.0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45,
+      0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1.0
+    ],
+    "human_annotation_policy": "Score each prediction independently against every human boundary map and pool TP, FP, and FN counts across annotations."
+  }
+}

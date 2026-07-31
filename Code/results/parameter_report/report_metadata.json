@@ -1,0 +1,272 @@
+{
+  "model_note": "This analysis evaluates a separable 1-D Taylor model applied independently along x and y. It is not the joint full 2-D Taylor model.",
+  "report_script": {
+    "path": "D:\\Papers\\HOG\\robust-HOG\\parameter_sensitivity_report.py",
+    "sha256": "ed66b0d81a217fe1709cefcceab3133e66a5da9b5a92b59035738a67fd15e51a"
+  },
+  "source_csvs": [
+    {
+      "path": "D:\\Papers\\HOG\\robust-HOG\\parameter_analysis_results.csv",
+      "sha256": "2d63a8e292a845bbf0ca5d6b6aba9ec1c44fd8f7ed41bd26a1763ce2d57f5c51"
+    }
+  ],
+  "experiment_provenance": {
+    "config_path": "D:\\Papers\\HOG\\robust-HOG\\parameter_analysis_config.json",
+    "config_sha256": "8df3c740adc21bdd31dd71a3051c08170841e1616c917002d22678edac1629d3",
+    "hog_configuration": {
+      "normalization": "L2-Hys",
+      "robust": true,
+      "robust_weighting": "huber",
+      "robust_delta": 2.0,
+      "robust_window": 5,
+      "visualization_percentile": 95.0
+    },
+    "runtime_definition": "Median of 3 noisy gradient-plus-HOG runs; per-configuration design-matrix setup and clean-reference computation excluded",
+    "residual_definition": "Unweighted RMS Taylor-fit residual over both per-axis systems on the common analysis ROI; diagnostic, not correntropy loss"
+  },
+  "seed_values": [
+    42
+  ],
+  "raw_row_count": 72,
+  "canonical_noisy_candidate_count": 42,
+  "evaluated_parameter_pairs": [
+    [
+      4,
+      1
+    ],
+    [
+      8,
+      1
+    ],
+    [
+      16,
+      1
+    ],
+    [
+      32,
+      1
+    ],
+    [
+      8,
+      2
+    ],
+    [
+      8,
+      3
+    ],
+    [
+      8,
+      4
+    ]
+  ],
+  "ranking_filter": "noise_type in {saltpepper_5, saltpepper_10}",
+  "ranking_deduplication_key": [
+    "noise_type",
+    "algorithm",
+    "n",
+    "h",
+    "polynomial_order"
+  ],
+  "normalization_scope": "all 42 unique noisy candidate rows",
+  "normalization": {
+    "higher_is_better": "(x-min)/(max-min)",
+    "lower_is_better": "(max-x)/(max-min)",
+    "constant_metric": "benefit=1 for every candidate",
+    "bounds": {
+      "hog_relative_error": {
+        "min": 0.20273079717790748,
+        "max": 0.667498091343491
+      },
+      "cosine_similarity": {
+        "min": 0.7772231490273347,
+        "max": 0.9794501119379526
+      },
+      "gradient_RMSE": {
+        "min": 0.8991260483335276,
+        "max": 61.458297013491865
+      },
+      "runtime": {
+        "min": 0.2067654000056791,
+        "max": 25.201167500003066
+      }
+    }
+  },
+  "composite_weights": {
+    "hog_relative_error": 0.45,
+    "cosine_similarity": 0.3,
+    "gradient_RMSE": 0.2,
+    "runtime": 0.05
+  },
+  "scenario_balanced_ranking": [
+    {
+      "algorithm": "correntropy",
+      "n": 32,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.8660860021257941,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "correntropy",
+      "n": 16,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.7638693311373723,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "correntropy",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.579887565743878,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "correntropy",
+      "n": 8,
+      "h": 3,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.5580344979955133,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "correntropy",
+      "n": 8,
+      "h": 2,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.5252068271643514,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.4534327154402603,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.45235337533925024,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "correntropy",
+      "n": 8,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.44785529376006217,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 8,
+      "h": 3,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.42889932906329264,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 8,
+      "h": 3,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.4274536308005065,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 16,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.41494234957504683,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 16,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.4134289873299991,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 32,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.4023730690825912,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 32,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.3996588003048106,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 8,
+      "h": 2,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.3835342733559716,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 8,
+      "h": 2,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.3826101752326202,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 8,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.29265375485161194,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 8,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.2916405097800454,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "direct_squared",
+      "n": 4,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.21414689144938828,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "correntropy",
+      "n": 4,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.2137303832731241,
+      "scenario_count": 2
+    },
+    {
+      "algorithm": "iterative_squared",
+      "n": 4,
+      "h": 1,
+      "polynomial_order": 3,
+      "mean_composite_score": 0.18470756430938845,
+      "scenario_count": 2
+    }
+  ],
+  "dpi": 300,
+  "nonconverged_rows": 0
+}

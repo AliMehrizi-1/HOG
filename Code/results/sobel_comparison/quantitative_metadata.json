@@ -1,0 +1,170 @@
+{
+  "status": "COMPLETED",
+  "image_count": 7,
+  "images": [
+    "Images\\Synthetic.png",
+    "Images\\cameraman.png",
+    "Images\\clock.png",
+    "Images\\flower.jpg",
+    "Images\\girl.png",
+    "Images\\home.jpg",
+    "Images\\lena.png"
+  ],
+  "preprocessing": {
+    "grayscale": "cv2.IMREAD_GRAYSCALE",
+    "max_image_dimension": 160,
+    "resize_interpolation": "cv2.INTER_AREA"
+  },
+  "seed_policy": "base seed + zero-based configured image index; one noisy image reused by all methods",
+  "base_seed": 42,
+  "noise_realizations": {
+    "Synthetic.png:gaussian_20db": {
+      "sha256": "7912feaf599312547707dbd2dd3be4fa2b1e8d1949e100d31c6317fc35155348",
+      "seed": "42"
+    },
+    "Synthetic.png:sp5": {
+      "sha256": "afb9e905a7464e561a04a75f60c60a9824e65f1c4865dc2d1c81325ad967cf12",
+      "seed": "42"
+    },
+    "Synthetic.png:sp10": {
+      "sha256": "c3e8030417158a5d3a08da9e170446e91e6083f0445b055628223931757eb0f1",
+      "seed": "42"
+    },
+    "cameraman.png:gaussian_20db": {
+      "sha256": "32b6f4154051c94f561afa4e6a034ebbe895a20bf31cad3f7dff9eb9057fbfe2",
+      "seed": "43"
+    },
+    "cameraman.png:sp5": {
+      "sha256": "230f06847fe5de71a25ba1c2e73404d7db3e0594ad083958a431019815537852",
+      "seed": "43"
+    },
+    "cameraman.png:sp10": {
+      "sha256": "a957bef289efd1286b71b6a071e66d0607c2fc23db62d3d348f5cbba13fbb801",
+      "seed": "43"
+    },
+    "clock.png:gaussian_20db": {
+      "sha256": "5a14ebce09a36c6a21652175291d825c6ecc38ced73138ce13fcbb3a5ca86a20",
+      "seed": "44"
+    },
+    "clock.png:sp5": {
+      "sha256": "7982b845b7d495643d3c3844e6f8f1d648d0f5335594cafafa46d132dde66d85",
+      "seed": "44"
+    },
+    "clock.png:sp10": {
+      "sha256": "39dbeab6f6be8553835a85d067150867b1e0cbd66958638a5ad91e05a0f9e782",
+      "seed": "44"
+    },
+    "flower.jpg:gaussian_20db": {
+      "sha256": "e34e84e60ae2a87e86cbeed8ce4db4aea6d223b74acb56e5a508a3224311b147",
+      "seed": "45"
+    },
+    "flower.jpg:sp5": {
+      "sha256": "20e54c10d6e50baafb65c172ead50622b2e48748e7d0ebd6dd51055ac512c37b",
+      "seed": "45"
+    },
+    "flower.jpg:sp10": {
+      "sha256": "dafbeb3af6d5cf535eaa4d78a5375bc8c7cc2a114e50387d4e2742cca7e6e5c2",
+      "seed": "45"
+    },
+    "girl.png:gaussian_20db": {
+      "sha256": "d612f97660100bd2f94a0fafa244ff8c78f2a1a61f95ebcb6ba62069d82eff6c",
+      "seed": "46"
+    },
+    "girl.png:sp5": {
+      "sha256": "140983761eb532a07342348738ff7e3284b0f2992d1fa751d225e628d0aeec61",
+      "seed": "46"
+    },
+    "girl.png:sp10": {
+      "sha256": "b9683df8f6aa60837638e02129dd79f15687060f2dd6a5842353640fe776eced",
+      "seed": "46"
+    },
+    "home.jpg:gaussian_20db": {
+      "sha256": "ee51aff4613b3325dd08e14973c9dc0e03cbceb4e0d6038eec88d5b13ea6981a",
+      "seed": "47"
+    },
+    "home.jpg:sp5": {
+      "sha256": "176ee51793ae9caa2f58bd48efb124c3c4e10fe41991b716e392e8574cbd2d27",
+      "seed": "47"
+    },
+    "home.jpg:sp10": {
+      "sha256": "fc308ec78e4e7d6f9da70161b3154438994f953353b7bda629b80f5875197c67",
+      "seed": "47"
+    },
+    "lena.png:gaussian_20db": {
+      "sha256": "38e9b177e755183da59af0a7d4d1f458ff4d4d0c6448964019ecb70edbb29890",
+      "seed": "48"
+    },
+    "lena.png:sp5": {
+      "sha256": "fa168099ca0952a4036a73d197018b25578db2115cd48fec6f5d81390b4785a7",
+      "seed": "48"
+    },
+    "lena.png:sp10": {
+      "sha256": "f8d90c100aced087083e3018020ee2923d8b89b2ce9c837a8c76169c72a9526c",
+      "seed": "48"
+    }
+  },
+  "common_roi_pad": 32,
+  "methods": {
+    "Sobel": {
+      "operator": "cv2.Sobel",
+      "ksize": 3
+    },
+    "Method I": {
+      "algorithm": 1,
+      "name": "Direct squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method II": {
+      "algorithm": 2,
+      "name": "Iterative squared loss",
+      "n": 8,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/parameter_report/best_params_per_algorithm_and_noise.csv"
+    },
+    "Method III": {
+      "algorithm": 3,
+      "name": "Correntropy loss",
+      "n": 16,
+      "h": 4,
+      "polynomial_order": 3,
+      "selection_source": "results/final_parameter_analysis/joint_correntropy_selection.csv",
+      "selection_role": "Balanced"
+    }
+  },
+  "hog": {
+    "cell_size": 8,
+    "orientations": 9,
+    "block_size_cells": 2,
+    "fuzzy": true,
+    "normalization": "L2-Hys",
+    "robust": true,
+    "robust_weighting": "huber",
+    "robust_delta": 2.0,
+    "robust_window": 5,
+    "min_weight": 0.05,
+    "visualization_percentile": 95.0
+  },
+  "solver": {
+    "tol": 0.001,
+    "max_iter": 500,
+    "init_sigma": null
+  },
+  "runtime_protocol": "median of 1 run(s); gradient estimation, common ROI crop, and robust HOG included; loading, resizing, noise generation, fixed solver/design-matrix construction, and clean reference excluded",
+  "metrics": {
+    "hog_relative_error": "L2(noisy-clean)/L2(clean), matched clean per method",
+    "cosine_similarity": "cosine(noisy, clean), matched clean per method"
+  },
+  "package_versions": {
+    "numpy": "2.2.6",
+    "opencv-python": "4.13.0.92",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "matplotlib": "3.10.9",
+    "python": "3.10.2 (tags/v3.10.2:a58ebcc, Jan 17 2022, 14:12:15) [MSC v.1929 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.22631-SP0"
+  }
+}
